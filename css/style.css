@@ -1,5 +1,3 @@
-@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
-
 /* //////////////////////////////////reset////////////////////////// */
 /* ///////////////////////////////////////////////////////////////// */
 
@@ -18,7 +16,6 @@
 
 a {
   text-decoration: none;
-  border: 2px solid transparent;
 }
 
 a:focus,
@@ -60,12 +57,16 @@ img {
   width: 100%;
 }
 
+.simplebar-content-wrapper {
+  overflow: auto;
+}
+
 /* //////////////////////////////////////////////////// */
 /* Style guide */
 /* //////////////////////////////////////////////////// */
 
 .container {
-  max-width: 1600px;
+  max-width: 1630px;
   padding: 0px 15px;
   margin: 0 auto;
 }
@@ -92,8 +93,7 @@ button:active {
 }  */
 
 a:focus {
-  border: 2px solid #7943a4;
-  box-sizing: border-box;
+  outline: 2px solid #7943a4;
 }
 
 a:hover {
@@ -110,7 +110,7 @@ a:hover {
 }
 
 .nav-bar {
-  padding-top: 30px;
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,19 +121,21 @@ a:hover {
   height: 40px;
 }
 
+.nav {
+  margin-right: 40px;
+}
+
 .nav-list {
-  margin-right: 100px;
+  display: flex;
+  padding: 0;
 }
 
 .nav-a {
+  margin-right: 62px;
   font-size: 18px;
   line-height: 25px;
   font-weight: 600;
   color: #ffffff;
-}
-
-.nav-a:not(:last-of-type) {
-  margin-right: 54px;
 }
 
 .a-enter {
@@ -145,23 +147,21 @@ a:hover {
 .nav-a:active,
 .a-enter:active {
   color: #9d5cd0;
-  border: 2px solid #000000;
+  outline: none;
 }
 
 /* //////////////////////////////////////////////////// */
 /* btn header-top enter*/
 /* //////////////////////////////////////////////////// */
 
-.a-enter:hover,
-a:hover svg > rect,
-a:hover svg > path {
+.a-enter:hover svg > rect,
+.a-enter:hover svg > path {
   fill: #c283f3;
   transition: fill 0.4s ease;
 }
 
-.a-enter:active,
-a:active svg > rect,
-a:active svg > path {
+.a-enter:active svg > rect,
+.a-enter:active svg > path {
   fill: #9d5cd0;
   transition: fill 0.4s ease;
 }
@@ -187,92 +187,122 @@ a:active svg > path {
 }
 
 .topmenu {
-  margin: 0;
   padding: 0;
-  width: 1035px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .submenu-link {
+  margin-right: 96px;
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
 }
 
+.submenu-link-svg {
+  margin-bottom: 2px;
+}
+
+.submenu-link:hover svg > path {
+  stroke: #c283f3;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+
+.submenu-link:active svg > path {
+  stroke: #9d5cd0;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+
 .menu:hover {
-  border: 2px solid #9d5cd0;
+  outline: 2px solid #9d5cd0;
 }
 
 .menu:active {
-  background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4)),
-    url(img/bg/bg_menu.png);
+  background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4)), url(../img/bg/bg_menu.png);
   border: 2px solid #d1a9f0;
 }
 
-.fa-angle-down:hover,
-.fa-angle-down:active {
-  transform: rotate(180deg);
-}
-
 .submenu {
-  box-sizing: content-box;
+  width: 300px;
   background: rgba(0, 0, 0, 0.4);
-  border: 40px solid rgba(0, 0, 0, 0);
-  border-right-width: 20px;
   position: absolute;
   padding: 0;
-  padding-right: 20px;
   z-index: 5;
   transform: scaleY(0);
   transform-origin: 0 0;
   transition: 0.5s ease-in-out;
-  overflow: hidden auto;
 }
 
-.menu{
+.menu {
   position: relative;
   color: white;
   text-align: left;
-  background-image: url(/img/bg/bg_menu.png);
-  width: 220px;
+  background-image: url(../img/bg/bg_menu.png);
   height: 40px;
-  margin-bottom: 20px;
   padding: 12px 15px;
+  margin-top: 2px;
+  margin-bottom: 18px;
 }
 
 .topmenu > li:hover .submenu {
   opacity: 1;
   transform: scaleY(1);
+}
+
+.simplebar-content {
   height: 220px;
   width: 220px;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 
-.submenu::-webkit-scrollbar {
-  width: 3px;
-  background-color: #000000;
+.simplebar-placeholder {
+  height: 300px !important;
 }
 
-.submenu::-webkit-scrollbar-thumb {
+.simplebar-scrollbar {
   background-color: #9d5cd0;
+  width: 3px;
+}
+
+.simplebar-track {
+  background-color: #000000;
+  width: 3px !important;
+  margin-right: 20px;
+  height: 220px;
+  margin-top: 40px;
 }
 
 .submenu-link:active,
 .menu:active {
   color: #9d5cd0;
-  border: 2px solid rgba(0, 0, 0, 0);
+  outline: none;
 }
 
-.submenu-link:focus,
+/* .submenu-link:focus,
 .menu:focus {
   border: 2px solid #7943a4;
-  box-sizing: border-box;
-}
+} */
 
 /* //////////////////////////////////////////////////// */
 /* Поиск по сайту */
 /* //////////////////////////////////////////////////// */
+
+.search {
+  display: flex;
+  margin-top: 3px;
+}
 
 .btn-search {
   background: none;
@@ -287,7 +317,7 @@ a:active svg > path {
   color: rgba(255, 255, 255, 0.85);
   margin-right: 15px;
   margin-bottom: 5px;
-  caret-color: #C283F3;
+  caret-color: #c283f3;
 }
 
 .input-search::-webkit-input-placeholder {
@@ -318,6 +348,7 @@ form:hover svg > path {
 form:focus svg > rect,
 form:focus svg > path {
   fill: #c283f3;
+  outline: 2px solid #9d5cd0;
 }
 
 /* //////////////////////////////////////////////////// */

@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard</title>
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/font.css">
   <link rel="stylesheet" href="css/style.css">
@@ -19,14 +21,16 @@
           <a href="">
             <img class="logo" src="img/icons/logo.svg" alt="Логотип">
           </a>
-          <nav class="nav-list">
-            <a href="" class="nav-a">О нас</a>
-            <a href="" class="nav-a">Галерея</a>
-            <a href="" class="nav-a">Каталог</a>
-            <a href="" class="nav-a">События</a>
-            <a href="" class="nav-a">Издания</a>
-            <a href="" class="nav-a">Проекты</a>
-            <a href="" class="nav-a">Контакты</a>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a href="" class="nav-a">О нас</a></li>
+              <li><a href="" class="nav-a">Галерея</a></li>
+              <li><a href="" class="nav-a">Каталог</a></li>
+              <li><a href="" class="nav-a">События</a></li>
+              <li><a href="" class="nav-a">Издания</a></li>
+              <li><a href="" class="nav-a">Проекты</a></li>
+              <li><a href="" class="nav-a">Контакты</a></li>
+            </ul>
           </nav>
           <a href="" class="a-enter">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,8 +47,13 @@
       <div class="container">
         <nav class="nav-art-styles">
           <ul class="topmenu">
-            <li><a href="" class="submenu-link">Реализм <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-              <ul class="submenu">
+            <li><a href="#" class="submenu-link">Реализм
+                <svg class="submenu-link-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6L0.999998 1" stroke="white" />
+                </svg>
+              </a>
+              <ul class="submenu" data-simplebar>
                 <li><a href="" class="menu">Роза Бонёр</a></li>
                 <li><a href="" class="menu">Илья Репин</a></li>
                 <li><a href="" class="menu">Томас Икинс</a></li>
@@ -54,8 +63,13 @@
                 <li><a href="" class="menu">Жан-Франсуа Милле</a></li>
               </ul>
             </li>
-            <li><a href="" class="submenu-link">Импрессионизм <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-              <ul class="submenu">
+            <li><a href="#" class="submenu-link">Импрессионизм
+                <svg class="submenu-link-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6L0.999998 1" stroke="white" />
+                </svg>
+              </a>
+              <ul class="submenu" data-simplebar>
                 <li><a href="" class="menu">Роза Бонёр</a></li>
                 <li><a href="" class="menu">Илья Репин</a></li>
                 <li><a href="" class="menu">Томас Икинс</a></li>
@@ -65,9 +79,13 @@
                 <li><a href="" class="menu">Жан-Франсуа Милле</a></li>
               </ul>
             </li>
-            <li><a href="" class="submenu-link">Постимпрессионизм <i class="fa fa-angle-down"
-                  aria-hidden="true"></i></a>
-              <ul class="submenu">
+            <li><a href="#" class="submenu-link">Постимпрессионизм
+                <svg class="submenu-link-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6L0.999998 1" stroke="white" />
+                </svg>
+              </a>
+              <ul class="submenu" data-simplebar>
                 <li><a href="" class="menu">Роза Бонёр</a></li>
                 <li><a href="" class="menu">Илья Репин</a></li>
                 <li><a href="" class="menu">Томас Икинс</a></li>
@@ -77,8 +95,13 @@
                 <li><a href="" class="menu">Жан-Франсуа Милле</a></li>
               </ul>
             </li>
-            <li><a href="" class="submenu-link">Авангард <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-              <ul class="submenu">
+            <li><a href="#" class="submenu-link">Авангард
+                <svg class="submenu-link-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6L0.999998 1" stroke="white" />
+                </svg>
+              </a>
+              <ul class="submenu" data-simplebar>
                 <li><a href="" class="menu">Роза Бонёр</a></li>
                 <li><a href="" class="menu">Илья Репин</a></li>
                 <li><a href="" class="menu">Томас Икинс</a></li>
@@ -88,8 +111,13 @@
                 <li><a href="" class="menu">Жан-Франсуа Милле</a></li>
               </ul>
             </li>
-            <li><a href="" class="submenu-link">Футуризм <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-              <ul class="submenu">
+            <li><a href="#" class="submenu-link">Футуризм
+                <svg class="submenu-link-svg" width="12" height="7" viewBox="0 0 12 7" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1L6 6L0.999998 1" stroke="white" />
+                </svg>
+              </a>
+              <ul class="submenu" data-simplebar>
                 <li><a href="" class="menu">Роза Бонёр</a></li>
                 <li><a href="" class="menu">Илья Репин</a></li>
                 <li><a href="" class="menu">Томас Икинс</a></li>
