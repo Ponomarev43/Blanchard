@@ -39,15 +39,6 @@ body {
   font-family: "OpenSans", sans-serif;
 }
 
-input::-ms-clear {
-  display: none;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
 ul li {
   list-style: none;
 }
@@ -98,6 +89,7 @@ a:focus {
 
 a:hover {
   color: #c283f3;
+  transition: 0.4s;
 }
 
 /* //////////////////////////////////////////////////// */
@@ -106,31 +98,23 @@ a:hover {
 
 .header-top {
   background: #000;
-  height: 100px;
 }
 
-.nav-bar {
+.nav-top-bar {
   padding-top: 20px;
+  padding-bottom: 23px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  width: 173px;
-  height: 40px;
-}
-
-.nav {
+.nav-top-menu {
+  display: flex;
+  padding: 0;
   margin-right: 40px;
 }
 
 .nav-list {
-  display: flex;
-  padding: 0;
-}
-
-.nav-a {
   margin-right: 62px;
   font-size: 18px;
   line-height: 25px;
@@ -138,14 +122,14 @@ a:hover {
   color: #ffffff;
 }
 
-.a-enter {
+.enter {
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
 }
 
-.nav-a:active,
-.a-enter:active {
+.nav-list:active,
+.enter:active {
   color: #9d5cd0;
   outline: none;
 }
@@ -154,16 +138,15 @@ a:hover {
 /* btn header-top enter*/
 /* //////////////////////////////////////////////////// */
 
-.a-enter:hover svg > rect,
-.a-enter:hover svg > path {
+.enter:hover svg > rect,
+.enter:hover svg > path {
   fill: #c283f3;
-  transition: fill 0.4s ease;
+  transition: 0.4s;
 }
 
-.a-enter:active svg > rect,
-.a-enter:active svg > path {
+.enter:active svg > rect,
+.enter:active svg > path {
   fill: #9d5cd0;
-  transition: fill 0.4s ease;
 }
 
 /* //////////////////////////////////////////////////// */
@@ -174,37 +157,34 @@ a:hover {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.header-bottom a {
-  display: block;
-  transition: 0.3s ease-in-out;
-}
-
-.nav-art-styles {
-  height: 70px;
+.nav-bottom-bar {
+  padding-top: 19px;
+  padding-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.topmenu {
+.nav-menu {
+  margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.submenu-link {
+.nav-menu > li:not(:last-child) {
   margin-right: 96px;
+}
+
+.nav-submenu {
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
 }
 
-.submenu-link-svg {
-  margin-bottom: 2px;
-}
-
-.submenu-link:hover svg > path {
+.nav-submenu:hover svg > path {
+  transition: 0.4s;
   stroke: #c283f3;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -214,7 +194,8 @@ a:hover {
   transform-origin: center center;
 }
 
-.submenu-link:active svg > path {
+.nav-submenu:active svg > path {
+  transition: 0.4s;
   stroke: #9d5cd0;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -224,16 +205,8 @@ a:hover {
   transform-origin: center center;
 }
 
-.menu:hover {
-  outline: 2px solid #9d5cd0;
-}
-
-.menu:active {
-  background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4)), url(../img/bg/bg_menu.png);
-  border: 2px solid #d1a9f0;
-}
-
 .submenu {
+  margin-top: 35px;
   width: 300px;
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -244,26 +217,49 @@ a:hover {
   transition: 0.5s ease-in-out;
 }
 
+.submenu li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 .menu {
   position: relative;
+  display: block;
   color: white;
   text-align: left;
   background-image: url(../img/bg/bg_menu.png);
   height: 40px;
   padding: 12px 15px;
-  margin-top: 2px;
-  margin-bottom: 18px;
 }
 
-.topmenu > li:hover .submenu {
+.menu:hover {
+  outline: 2px solid #9d5cd0;
+}
+
+.menu:active {
+  border: 2px solid #d1a9f0;
+  background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4)), url(../img/bg/bg_menu.png);
+}
+
+.nav-menu > li:hover .submenu {
   opacity: 1;
   transform: scaleY(1);
+}
+
+.nav-submenu:active,
+.menu:active {
+  color: #9d5cd0;
+  outline: none;
 }
 
 .simplebar-content {
   height: 220px;
   width: 220px;
   margin: 0 auto;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.simplebar-content-wrapper {
   margin-top: 40px;
 }
 
@@ -284,17 +280,6 @@ a:hover {
   margin-top: 40px;
 }
 
-.submenu-link:active,
-.menu:active {
-  color: #9d5cd0;
-  outline: none;
-}
-
-/* .submenu-link:focus,
-.menu:focus {
-  border: 2px solid #7943a4;
-} */
-
 /* //////////////////////////////////////////////////// */
 /* Поиск по сайту */
 /* //////////////////////////////////////////////////// */
@@ -305,6 +290,10 @@ a:hover {
 }
 
 .btn-search {
+  padding: 0;
+  margin: 0;
+  padding-top: 4px;
+  padding-right: 4px;
   background: none;
   border: none;
 }
@@ -316,7 +305,6 @@ a:hover {
   font-size: 18px;
   color: rgba(255, 255, 255, 0.85);
   margin-right: 15px;
-  margin-bottom: 5px;
   caret-color: #c283f3;
 }
 
@@ -339,6 +327,7 @@ a:hover {
 .input-search:hover,
 form:hover svg > rect,
 form:hover svg > path {
+  transition: 0.4s;
   border: none;
   border-bottom: 1px solid #c283f3;
   fill: #c283f3;
