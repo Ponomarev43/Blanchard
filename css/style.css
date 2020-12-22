@@ -108,6 +108,11 @@ a:hover {
   align-items: center;
 }
 
+.header-logo {
+  width: 173px;
+  height: 40px;
+}
+
 .nav-top-menu {
   display: flex;
   padding: 0;
