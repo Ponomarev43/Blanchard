@@ -87,11 +87,6 @@ a:focus {
   outline: 2px solid #7943a4;
 }
 
-a:hover {
-  color: #c283f3;
-  transition: 0.4s;
-}
-
 /* //////////////////////////////////////////////////// */
 /* header-top */
 /* //////////////////////////////////////////////////// */
@@ -100,7 +95,7 @@ a:hover {
   background: #000;
 }
 
-.nav-top-bar {
+.nav-top {
   padding-top: 20px;
   padding-bottom: 23px;
   display: flex;
@@ -108,49 +103,63 @@ a:hover {
   align-items: center;
 }
 
-.header-logo {
+.nav-top__logo {
   width: 173px;
   height: 40px;
 }
 
-.nav-top-menu {
+.menu-top {
   display: flex;
   padding: 0;
   margin-right: 40px;
 }
 
-.nav-list {
+.menu-top__link {
   margin-right: 62px;
   font-size: 18px;
   line-height: 25px;
   font-weight: 600;
   color: #ffffff;
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.enter {
+.nav-top__enter {
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.nav-list:active,
-.enter:active {
+.menu-top__link:hover,
+.nav-top__enter:hover {
+  color: #c283f3;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.menu-top__link:active,
+.nav-top__enter:active {
   color: #9d5cd0;
   outline: none;
+  transition: all 0.5s ease-in-out 0s;
 }
 
 /* //////////////////////////////////////////////////// */
 /* btn header-top enter*/
 /* //////////////////////////////////////////////////// */
 
-.enter:hover svg > rect,
-.enter:hover svg > path {
-  fill: #c283f3;
-  transition: 0.4s;
+.nav-top__enter svg > rect,
+.nav-top__enter svg > path {
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.enter:active svg > rect,
-.enter:active svg > path {
+.nav-top__enter:hover svg > rect,
+.nav-top__enter:hover svg > path {
+  fill: #c283f3;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.nav-top__enter:active svg > rect,
+.nav-top__enter:active svg > path {
   fill: #9d5cd0;
 }
 
@@ -162,7 +171,7 @@ a:hover {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.nav-bottom-bar {
+.nav-bottom {
   padding-top: 19px;
   padding-bottom: 20px;
   display: flex;
@@ -170,7 +179,7 @@ a:hover {
   justify-content: space-between;
 }
 
-.nav-menu {
+.menu-bottom {
   margin: 0;
   padding: 0;
   display: flex;
@@ -178,18 +187,27 @@ a:hover {
   align-items: center;
 }
 
-.nav-menu > li:not(:last-child) {
+.menu-bottom__link:not(:last-child) {
   margin-right: 96px;
 }
 
-.nav-submenu {
+.menu-bottom__link {
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.nav-submenu:hover svg > path {
-  transition: 0.4s;
+.menu-bottom__link:hover {
+  color: #c283f3;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.menu-bottom__link svg > path {
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.menu-bottom__link:hover svg > path {
   stroke: #c283f3;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -197,10 +215,10 @@ a:hover {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
   transform-origin: center center;
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.nav-submenu:active svg > path {
-  transition: 0.4s;
+.menu-bottom__link:active svg > path {
   stroke: #9d5cd0;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -208,6 +226,7 @@ a:hover {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
   transform-origin: center center;
+  transition: all 0.5s ease-in-out 0s;
 }
 
 .submenu {
@@ -219,14 +238,14 @@ a:hover {
   z-index: 5;
   transform: scaleY(0);
   transform-origin: 0 0;
-  transition: 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.submenu li:not(:last-child) {
+.submenu__item:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.menu {
+.submenu__link {
   position: relative;
   display: block;
   color: white;
@@ -234,24 +253,27 @@ a:hover {
   background-image: url(../img/bg/bg_menu.png);
   height: 40px;
   padding: 12px 15px;
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.menu:hover {
+.submenu__link:hover {
   outline: 2px solid #9d5cd0;
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.menu:active {
+.submenu__link:active {
   border: 2px solid #d1a9f0;
   background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4)), url(../img/bg/bg_menu.png);
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.nav-menu > li:hover .submenu {
+.menu-bottom > li:hover .submenu {
   opacity: 1;
   transform: scaleY(1);
 }
 
-.nav-submenu:active,
-.menu:active {
+.menu-bottom__link:active,
+.submenu__link:active {
   color: #9d5cd0;
   outline: none;
 }
@@ -289,60 +311,67 @@ a:hover {
 /* Поиск по сайту */
 /* //////////////////////////////////////////////////// */
 
-.search {
+.form-search {
   display: flex;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
-.btn-search {
+.form-search__button {
   padding: 0;
   margin: 0;
   padding-top: 4px;
-  padding-right: 4px;
+  padding-right: 6px;
   background: none;
   border: none;
 }
 
-.input-search {
+.form-search__input {
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.85);
   background: none;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.85);
-  margin-right: 15px;
+  padding-right: 15px;
   caret-color: #c283f3;
 }
 
-.input-search::-webkit-input-placeholder {
+.form-search__input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.input-search::-moz-placeholder {
+.form-search__input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.input-search:-moz-placeholder {
+.form-search__input:-moz-placeholder {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.input-search:-ms-input-placeholder {
+.form-search__input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.input-search:hover,
+.form-search__input,
+form svg > rect,
+form svg > path {
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.form-search__input:hover,
 form:hover svg > rect,
 form:hover svg > path {
-  transition: 0.4s;
   border: none;
   border-bottom: 1px solid #c283f3;
   fill: #c283f3;
+  transition: all 0.5s ease-in-out 0s;
 }
 
-.input-search:focus,
+.form-search__input:focus,
 form:focus svg > rect,
 form:focus svg > path {
   fill: #c283f3;
   outline: 2px solid #9d5cd0;
+  transition: all 0.5s ease-in-out 0s;
 }
 
 /* //////////////////////////////////////////////////// */
